@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unidad 4 interactiva de Matemática 1 sobre matrices, operaciones, aplicaciones e inversa por Gauss-Jordan.">
+  <meta name="theme-color" content="#1f4e8c">
+  <title>Matemática 1 | Unidad 4 · Matrices</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)'],['$','$']],
+        displayMath: [['\\[','\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="cabecera__marca">
+    <div class="marca-matematica marca-matriz" aria-hidden="true">
+      <svg viewBox="0 0 84 84">
+        <path d="M22 13H13v58h9M62 13h9v58h-9"/>
+        <g><rect x="27" y="21" width="10" height="10" rx="2"/><rect x="47" y="21" width="10" height="10" rx="2"/><rect x="27" y="37" width="10" height="10" rx="2"/><rect x="47" y="37" width="10" height="10" rx="2"/><rect x="27" y="53" width="10" height="10" rx="2"/><rect x="47" y="53" width="10" height="10" rx="2"/></g>
+      </svg>
+    </div>
+    <div>
+      <p class="ceja">FaCiAS · UNCo · Recursado 2026</p>
+      <h1>Matemática 1</h1>
+      <p class="subtitulo">Unidad 4 · Matrices</p>
+    </div>
+  </div>
+  <div class="cabecera__acciones">
+    <label class="campo-estudiante"><span>Estudiante</span><input id="nombre-estudiante" type="text" maxlength="80" placeholder="Nombre y apellido" autocomplete="name"></label>
+    <button class="boton boton--claro" id="imprimir" type="button">Imprimir resumen</button>
+    <button class="boton boton--peligro-suave" id="reiniciar" type="button">Reiniciar progreso</button>
+  </div>
+</header>
+<div class="barra-progreso" aria-label="Progreso de la unidad">
+  <div class="barra-progreso__texto"><span>Progreso guardado en este dispositivo</span><strong id="progreso-texto">0%</strong></div>
+  <div class="barra-progreso__riel"><div id="progreso-barra" class="barra-progreso__valor"></div></div>
+</div>
+<div class="layout">
+  <aside class="navegacion">
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="lista-navegacion">Contenidos <span>☰</span></button>
+    <nav id="lista-navegacion">
+      <a href="#inicio" class="activo">Inicio</a>
+      <a href="#notacion">1. Matrices y notación</a>
+      <a href="#construccion">2. Construcción por fórmula</a>
+      <a href="#operaciones">3. Operaciones básicas</a>
+      <a href="#producto">4. Producto matricial</a>
+      <a href="#especiales">5. Matrices especiales y propiedades</a>
+      <a href="#ecuaciones">6. Ecuaciones matriciales</a>
+      <a href="#inversas">7. Matrices inversibles</a>
+      <a href="#gauss">8. Gauss–Jordan</a>
+      <a href="#aplicaciones">9. Aplicaciones del TP</a>
+      <a href="#practica-final">Práctica integradora</a>
+    </nav>
+    <section class="panel-lateral">
+      <h2>Cómo estudiar</h2>
+      <p>Primero mirá los órdenes. Después decidí si la operación existe y recién entonces calculá.</p>
+      <p class="panel-lateral__dato"><span id="aciertos-total">0</span> actividades resueltas</p>
+    </section>
+  </aside>
+
+  <main id="contenido">
+    <section id="inicio" class="seccion observar activa" aria-hidden="false">
+      <div class="hero hero-matrices">
+        <div class="hero__texto">
+          <p class="etiqueta">Teoría + práctica interactiva</p>
+          <h2>Organizar datos, operar y modelizar con matrices</h2>
+          <p>En esta unidad vas a reconocer filas, columnas y elementos; construir matrices; operar con ellas; interpretar productos en contextos ambientales y laborales; y calcular inversas mediante Gauss–Jordan.</p>
+          <div class="hero__acciones"><a class="boton" href="#notacion">Comenzar el recorrido</a><a class="boton boton--secundario" href="#practica-final">Práctica integradora</a></div>
+        </div>
+        <div class="hero-grafico hero-grafico-matriz" aria-label="Esquema de transformación matricial">
+          <div class="mini-matriz mini-matriz--azul"><span>120</span><span>45</span><span>80</span><span>90</span><span>35</span><span>60</span></div>
+          <div class="simbolo-operacion">×</div>
+          <div class="mini-matriz mini-matriz--verde mini-matriz--columna"><span>500</span><span>300</span><span>400</span></div>
+          <div class="simbolo-operacion">=</div>
+          <div class="mini-matriz mini-matriz--resultado mini-matriz--columna"><span>105500</span><span>79500</span></div>
+          <p>cantidades × costos = costo total por localidad</p>
+        </div>
+      </div>
+      <div class="ruta ruta-inicio">
+        <div class="titulo-seccion"><p class="numero">Mapa</p><div><h2>Ruta de aprendizaje</h2><p>Leer, decidir, calcular e interpretar.</p></div></div>
+        <div class="tarjetas-ruta"><article><span>01</span><h3>Leer</h3><p>Orden, filas, columnas y elementos.</p></article><article><span>02</span><h3>Construir</h3><p>Usar una regla para completar entradas.</p></article><article><span>03</span><h3>Operar</h3><p>Suma, traspuesta, escalares y productos.</p></article><article><span>04</span><h3>Resolver</h3><p>Ecuaciones e inversas.</p></article><article><span>05</span><h3>Interpretar</h3><p>Riesgos, residuos, ruido y costos.</p></article></div>
+      </div>
+    </section>
+
+    <section id="notacion" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">1</p><div><h2>Matrices y notación</h2><p>Una matriz es un arreglo rectangular de números organizado en filas y columnas.</p></div></div>
+      <div class="grilla-teoria grilla-teoria--3">
+        <article class="tarjeta-concepto"><h3>Orden</h3><p>Si una matriz tiene \(m\) filas y \(n\) columnas, su orden es \(m\times n\).</p></article>
+        <article class="tarjeta-concepto"><h3>Elemento</h3><p>El símbolo \(a_{ij}\) indica el elemento ubicado en la fila \(i\) y la columna \(j\).</p></article>
+        <article class="tarjeta-concepto"><h3>Conjunto</h3><p>\(M_{m\times n}(\mathbb R)\) representa las matrices reales de orden \(m\times n\).</p></article>
+      </div>
+      <div class="nota"><strong>Convención de esta página.</strong> Siempre escribimos primero la cantidad de filas y después la cantidad de columnas.</div>
+      <div class="laboratorio laboratorio-matriz">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Explorador</p><h3>Leé una matriz en contexto</h3><p>La matriz registra concentraciones de tres contaminantes en dos áreas. Tocá una entrada para identificar su fila, columna y significado.</p><div id="celda-datos" class="resultado-lab"></div></div>
+        <div class="matriz-contexto">
+          <div class="etiquetas-columnas"><span>A</span><span>B</span><span>C</span></div>
+          <div class="fila-contexto"><strong>Área 1</strong><div id="matriz-celdas-1" class="matriz-celdas"></div></div>
+          <div class="fila-contexto"><strong>Área 2</strong><div id="matriz-celdas-2" class="matriz-celdas"></div></div>
+        </div>
+      </div>
+      <article class="actividad" data-actividad="notacion">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 1 · Lectura de matrices</p><h3>Filas, columnas y elementos</h3><p>Elegí una tarjeta en cada pregunta.</p></div><span class="estado" id="estado-notacion">Pendiente</span></div>
+        <div id="quiz-notacion" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="notacion" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="notacion" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-notacion"></div>
+      </article>
+    </section>
+
+    <section id="construccion" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">2</p><div><h2>Construcción de matrices por fórmula</h2><p>Una regla para \(a_{ij}\) permite calcular cada entrada sustituyendo los valores de \(i\) y \(j\).</p></div></div>
+      <div class="definicion-matriz">
+        <div><p class="actividad__tipo">Procedimiento</p><ol><li>Identificá el número de filas y columnas.</li><li>Elegí una posición \((i,j)\).</li><li>Sustituí \(i\) y \(j\) en la fórmula.</li><li>Ubicá el resultado en la entrada correspondiente.</li></ol></div>
+        <div class="formula-grande">\[A=(a_{ij}),\qquad a_{ij}=f(i,j)\]</div>
+      </div>
+      <div class="laboratorio laboratorio--vertical constructor-matriz">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Constructor interactivo</p><h3>Generá una matriz</h3>
+          <label class="control-select">Regla<select id="formula-matriz"><option value="suma">aᵢⱼ = i + j</option><option value="cuadrado">aᵢⱼ = i² + 2j</option><option value="alternada">aᵢⱼ = (−1)ⁱ⁺ʲ</option><option value="tramos">aᵢⱼ = 3 si i ≥ j; −2 si i &lt; j</option></select></label>
+          <div class="controles-dimension"><label>Filas<select id="filas-matriz"><option>2</option><option selected>3</option></select></label><label>Columnas<select id="columnas-matriz"><option>2</option><option selected>3</option><option>4</option></select></label></div>
+          <div id="constructor-explicacion" class="resultado-lab"></div>
+        </div>
+        <div><div id="constructor-resultado" class="matriz-grande"></div><p class="ayuda-celda">Tocá una entrada para ver cómo se calculó.</p></div>
+      </div>
+      <article class="actividad" data-actividad="construccion">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 2 · Fórmulas por posición</p><h3>Calculá entradas y matrices</h3><p>Prestá atención a los índices.</p></div><span class="estado" id="estado-construccion">Pendiente</span></div>
+        <div id="quiz-construccion" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="construccion" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="construccion" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-construccion"></div>
+      </article>
+    </section>
+
+    <section id="operaciones" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">3</p><div><h2>Operaciones básicas</h2><p>Suma, resta, producto por un escalar y traspuesta.</p></div></div>
+      <div class="grilla-teoria grilla-teoria--3">
+        <article class="tarjeta-concepto"><h3>Suma y resta</h3><p>Solo se realizan entre matrices del mismo orden y se operan entradas correspondientes.</p></article>
+        <article class="tarjeta-concepto"><h3>Producto por escalar</h3><p>\(kA\) se obtiene multiplicando cada entrada de \(A\) por \(k\).</p></article>
+        <article class="tarjeta-concepto"><h3>Traspuesta</h3><p>En \(A^t\), las filas de \(A\) pasan a ser columnas.</p></article>
+      </div>
+      <div class="laboratorio calculadora-matrices">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Calculadora 2×2</p><h3>Compará operaciones</h3><p>Editá las entradas y elegí una operación. En los productos, observá que \(AB\) y \(BA\) pueden ser diferentes.</p><label class="control-escalar">Escalar \(k\)<input id="escalar-k" type="number" value="2" step="1"></label><div class="botones-operacion" id="botones-operacion"></div><div id="calculadora-explicacion" class="resultado-lab"></div></div>
+        <div class="panel-calculadora"><div class="matrices-editables"><div><h4>\(A\)</h4><div id="entradas-A" class="matriz-input"></div></div><div><h4>\(B\)</h4><div id="entradas-B" class="matriz-input"></div></div></div><div class="resultado-operacion"><h4>Resultado</h4><div id="resultado-operacion" class="matriz-grande"></div></div></div>
+      </div>
+      <article class="actividad" data-actividad="operaciones">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 3 · Operaciones</p><h3>Decidí y calculá</h3><p>Recordá controlar los órdenes antes de operar.</p></div><span class="estado" id="estado-operaciones">Pendiente</span></div>
+        <div id="quiz-operaciones" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="operaciones" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="operaciones" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-operaciones"></div>
+      </article>
+    </section>
+
+    <section id="producto" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">4</p><div><h2>Producto de matrices</h2><p>Para calcular \(AB\), el número de columnas de \(A\) debe coincidir con el número de filas de \(B\).</p></div></div>
+      <div class="regla-producto"><div class="orden-chip">\(A_{m\times p}\)</div><div class="conector-producto"><strong>columnas = filas</strong><span>\(p\)</span></div><div class="orden-chip">\(B_{p\times n}\)</div><div class="flecha-producto">→</div><div class="orden-chip orden-chip--resultado">\((AB)_{m\times n}\)</div></div>
+      <div class="nota"><strong>Fila por columna.</strong> La entrada \(c_{ij}\) se obtiene multiplicando la fila \(i\) de \(A\) por la columna \(j\) de \(B\) y sumando los productos.</div>
+      <div class="laboratorio laboratorio--vertical visualizador-producto">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Visualizador paso a paso</p><h3>Construí \(AB\)</h3><p>Avanzá por las cuatro entradas del resultado. La fila y la columna utilizadas quedan destacadas.</p><div class="acciones-actividad"><button class="boton boton--fantasma" id="producto-anterior" type="button">← Anterior</button><button class="boton" id="producto-siguiente" type="button">Siguiente →</button></div><div id="producto-explicacion" class="resultado-lab"></div></div>
+        <div id="producto-visual" class="producto-visual"></div>
+      </div>
+      <article class="actividad" data-actividad="producto">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 4 · Compatibilidad y cálculo</p><h3>¿Se puede multiplicar?</h3><p>Determiná existencia, orden y resultados.</p></div><span class="estado" id="estado-producto">Pendiente</span></div>
+        <div id="quiz-producto" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="producto" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="producto" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-producto"></div>
+      </article>
+    </section>
+
+    <section id="especiales" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">5</p><div><h2>Matrices especiales y propiedades</h2><p>Algunas estructuras aparecen con frecuencia y simplifican los cálculos.</p></div></div>
+      <div class="grilla-especiales">
+        <article><h3>Matriz nula</h3><div class="matriz-estatica">\(\begin{pmatrix}0&0\\0&0\end{pmatrix}\)</div><p>Todos sus elementos son cero.</p></article>
+        <article><h3>Identidad</h3><div class="matriz-estatica">\(I_2=\begin{pmatrix}1&0\\0&1\end{pmatrix}\)</div><p>Actúa como neutro del producto.</p></article>
+        <article><h3>Triangular</h3><div class="matriz-estatica">\(\begin{pmatrix}1&2&3\\0&4&5\\0&0&6\end{pmatrix}\)</div><p>Puede ser superior o inferior.</p></article>
+        <article><h3>Simétrica</h3><div class="matriz-estatica">\(A^t=A\)</div><p>Se refleja respecto de la diagonal principal.</p></article>
+      </div>
+      <div class="advertencia"><strong>El producto no es conmutativo en general.</strong> Aunque existan ambos productos, puede ocurrir que \(AB\ne BA\).</div>
+      <details class="desplegable"><summary>Propiedades que conviene tener disponibles</summary><div><p>\((A+B)^t=A^t+B^t\), \((AB)^t=B^tA^t\), \(A(B+C)=AB+AC\), \(AI=IA=A\) cuando los órdenes son compatibles.</p></div></details>
+      <article class="actividad" data-actividad="especiales">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 5 · Clasificación y propiedades</p><h3>Reconocé estructuras</h3><p>Elegí la propiedad o el tipo de matriz adecuado.</p></div><span class="estado" id="estado-especiales">Pendiente</span></div>
+        <div id="quiz-especiales" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="especiales" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="especiales" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-especiales"></div>
+      </article>
+    </section>
+
+    <section id="ecuaciones" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">6</p><div><h2>Ecuaciones matriciales</h2><p>Dos matrices son iguales cuando tienen el mismo orden y sus entradas correspondientes son iguales.</p></div></div>
+      <div class="definicion-matriz"><div><p class="actividad__tipo">Igualdad</p><p>Si \(A=(a_{ij})\) y \(B=(b_{ij})\) tienen el mismo orden:</p><div class="formula-grande">\[A=B\iff a_{ij}=b_{ij}\text{ para todo }i,j.\]</div></div><div><p>Esto transforma una ecuación matricial en un sistema de ecuaciones escalares, una por cada posición.</p></div></div>
+      <div class="laboratorio laboratorio-ecuacion">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Ejemplo guiado</p><h3>Encontrá \(x\) e \(y\)</h3><p>Completá los valores que hacen verdadera la igualdad.</p><div class="formula-grande">\[\begin{pmatrix}2x+3y&5\\4x&y\end{pmatrix}+\begin{pmatrix}-7&2y\\3&6\end{pmatrix}=\begin{pmatrix}-5&1\\2&8\end{pmatrix}\]</div><div class="entradas-ecuacion"><label>\(x=\)<input id="ecuacion-x" type="number" step="any"></label><label>\(y=\)<input id="ecuacion-y" type="number" step="any"></label><button class="boton" id="comprobar-ecuacion-lab" type="button">Comprobar valores</button></div><div id="ecuacion-lab-feedback" class="resultado-lab"></div></div>
+        <div class="pasos-ecuacion"><h4>Ecuaciones por posición</h4><ol><li>Entrada \((1,1)\): \(2x+3y-7=-5\).</li><li>Entrada \((1,2)\): \(5+2y=1\).</li><li>Entrada \((2,1)\): \(4x+3=2\).</li><li>Entrada \((2,2)\): \(y+6=8\).</li></ol><p class="advertencia">Este ejemplo, tal como está escrito en el práctico, produce condiciones incompatibles. El laboratorio permite detectar esa inconsistencia.</p></div>
+      </div>
+      <article class="actividad" data-actividad="ecuaciones">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 6 · Igualdad y despeje</p><h3>Leé ecuaciones matriciales</h3><p>Analizá entradas y orden de las operaciones.</p></div><span class="estado" id="estado-ecuaciones">Pendiente</span></div>
+        <div id="quiz-ecuaciones" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="ecuaciones" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="ecuaciones" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-ecuaciones"></div>
+      </article>
+    </section>
+
+    <section id="inversas" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">7</p><div><h2>Matrices inversibles</h2><p>Una matriz cuadrada \(A\) es inversible si existe \(A^{-1}\) tal que \(AA^{-1}=A^{-1}A=I\).</p></div></div>
+      <div class="comparacion-magnitudes">
+        <article><p class="actividad__tipo">Inversible</p><h3>Puede transformarse en la identidad</h3><p>Su rango coincide con su orden y la reducción por filas no genera una fila nula en la parte izquierda.</p></article>
+        <article><p class="actividad__tipo">No inversible</p><h3>Hay dependencia entre filas</h3><p>Por ejemplo, si una fila es múltiplo de otra, no será posible convertir la matriz en la identidad.</p></article>
+      </div>
+      <div class="grilla-teoria">
+        <article class="tarjeta-concepto"><h3>Resolver \(AX=B\)</h3><p>Si \(A\) es inversible, multiplicamos a izquierda: \(X=A^{-1}B\).</p></article>
+        <article class="tarjeta-concepto"><h3>Resolver \(XA=B\)</h3><p>Si \(A\) es inversible, multiplicamos a derecha: \(X=BA^{-1}\).</p></article>
+      </div>
+      <div class="advertencia"><strong>El orden importa.</strong> En matrices no se puede mover un factor de un lado al otro como si el producto fuera conmutativo.</div>
+      <article class="actividad" data-actividad="inversas">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 7 · Inversa y orden</p><h3>Analizá matrices y ecuaciones</h3><p>Identificá cuándo existe inversa y dónde multiplicar.</p></div><span class="estado" id="estado-inversas">Pendiente</span></div>
+        <div id="quiz-inversas" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="inversas" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="inversas" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-inversas"></div>
+      </article>
+    </section>
+
+    <section id="gauss" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">8</p><div><h2>Método de Gauss–Jordan</h2><p>Aplicamos operaciones elementales a \([A\mid I]\) hasta obtener \([I\mid A^{-1}]\).</p></div></div>
+      <div class="grilla-teoria grilla-teoria--3">
+        <article class="tarjeta-concepto"><h3>Intercambiar</h3><p>\(F_i\leftrightarrow F_j\).</p></article>
+        <article class="tarjeta-concepto"><h3>Multiplicar</h3><p>\(kF_i\), con \(k\ne0\).</p></article>
+        <article class="tarjeta-concepto"><h3>Combinar</h3><p>\(F_i+kF_j\), con \(i\ne j\).</p></article>
+      </div>
+      <article class="actividad actividad-gauss" data-actividad="gauss">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Laboratorio 8 · Inversa paso a paso</p><h3>Transformá \([A\mid I]\)</h3><p>Trabajamos con \(A=\begin{pmatrix}2&5\\1&3\end{pmatrix}\). Elegí la operación correcta en cada etapa.</p></div><span class="estado" id="estado-gauss">Pendiente</span></div>
+        <div class="gauss-layout"><div><div id="gauss-actual" class="matriz-aumentada"></div><div id="gauss-opciones" class="opciones-gauss"></div><div id="gauss-feedback" class="retroalimentacion"></div><button class="boton boton--fantasma" id="reiniciar-gauss" type="button">Reiniciar procedimiento</button></div><div><h4>Historial</h4><div id="gauss-historial" class="historial-gauss"></div></div></div>
+      </article>
+    </section>
+
+    <section id="aplicaciones" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">9</p><div><h2>Aplicaciones del trabajo práctico</h2><p>Las matrices permiten organizar mediciones y combinar cantidades con costos o ponderaciones.</p></div></div>
+      <div class="casos-aplicados">
+        <article><p class="actividad__tipo">Higiene laboral</p><h3>Ruido y contaminantes</h3><p>Las filas pueden representar sectores y las columnas turnos o tipos de contaminante.</p></article>
+        <article><p class="actividad__tipo">Seguridad</p><h3>EPP y accidentes</h3><p>Un producto con un vector de costos o pesos transforma cantidades en índices totales.</p></article>
+        <article><p class="actividad__tipo">Ambiente</p><h3>Residuos y ventilación</h3><p>Los productos matriciales permiten calcular costos y aplicar factores de corrección.</p></article>
+      </div>
+      <div class="laboratorio laboratorio--vertical laboratorio-aplicaciones">
+        <div class="laboratorio__texto"><p class="actividad__tipo">Explorador de casos</p><h3>Elegí una situación</h3><label class="control-select">Caso<select id="caso-aplicacion"></select></label><div id="caso-enunciado"></div><button class="boton" id="mostrar-calculo-caso" type="button">Mostrar cálculo</button><div id="caso-calculo" class="resultado-lab" hidden></div></div>
+        <div id="caso-visual" class="caso-visual"></div>
+      </div>
+      <article class="actividad" data-actividad="aplicaciones">
+        <div class="actividad__cabecera"><div><p class="actividad__tipo">Actividad 9 · Interpretación contextual</p><h3>Calculá e interpretá</h3><p>Las preguntas retoman situaciones del TP 2026.</p></div><span class="estado" id="estado-aplicaciones">Pendiente</span></div>
+        <div id="quiz-aplicaciones" class="lista-preguntas"></div>
+        <div class="acciones-actividad"><button class="boton" data-check="aplicaciones" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="aplicaciones" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-aplicaciones"></div>
+      </article>
+    </section>
+
+    <section id="practica-final" class="seccion observar" aria-hidden="true">
+      <div class="titulo-seccion"><p class="numero">✓</p><div><h2>Práctica integradora</h2><p>Preguntas aleatorias de toda la unidad.</p></div></div>
+      <article class="actividad practica-final"><div class="actividad__cabecera"><div><p class="actividad__tipo">Autoevaluación</p><h3 id="practica-pregunta">Generá una pregunta para comenzar.</h3></div><span class="racha" id="racha">Racha: 0</span></div><div id="practica-opciones" class="opciones"></div><div class="acciones-actividad"><button class="boton" id="practica-nueva" type="button">Nueva pregunta</button><button class="boton boton--secundario" id="practica-comprobar" type="button" disabled>Comprobar</button></div><div id="practica-feedback" class="retroalimentacion"></div></article>
+      <div class="resumen-estudiante"><h3>Panel del estudiante</h3><div class="resumen-estudiante__grid"><article><span>Nombre</span><strong id="resumen-nombre">Sin completar</strong></article><article><span>Progreso</span><strong id="resumen-progreso">0%</strong></article><article><span>Actividades</span><strong id="resumen-logradas">0 de 9</strong></article><article><span>Mejor racha</span><strong id="resumen-racha">0</strong></article></div></div>
+    </section>
+  </main>
+</div>
+<footer><p>Matemática 1 · Unidad 4: Matrices · FaCiAS · Universidad Nacional del Comahue</p><p>Material interactivo preparado para acompañar el trabajo teórico y el TP de 2026.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
