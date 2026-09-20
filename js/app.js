@@ -248,7 +248,7 @@ const datos = {
   aplicaciones: [
     {
       id: 'a1',
-      texto: 'Con \\(Q=\\begin{pmatrix}50&100&80\\\\60&120&90\\end{pmatrix}\\) y costos \\(P=\\begin{pmatrix}200\\\\50\\\\150\\end{pmatrix}\\), el costo del primer mes es:',
+      texto: 'Una empresa de saneamiento gestiona residuos en dos localidades. Las cantidades recolectadas anualmente  (en miles toneladas) de tres tipos de residuos (orgánicos, plásticos y papel) se representan mediante la matriz \\(Q=\\begin{pmatrix}50&100&80\\\\60&120&90\\end{pmatrix}\\) y costos \\(P=\\begin{pmatrix}200\\\\50\\\\150\\end{pmatrix}\\), el costo anual de tratamiento por cada mil toneladas están dados por:',
       correcta: '27000',
       opciones: ['22000', '27000', '31500', '54000'],
       explicacion: '\\(50(200)+100(50)+80(150)=27000\\).'
