@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 const CLAVE = 'm1-matrices-2026-v1';
 const TOTAL_ACTIVIDADES = 9;
