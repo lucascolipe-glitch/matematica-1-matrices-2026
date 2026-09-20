@@ -255,7 +255,7 @@ const datos = {
     },
     {
       id: 'a2',
-      texto: 'Para \\(A=\\begin{pmatrix}3&2\\\\4&3\\\\2&1\\end{pmatrix}\\) y \\(W=\\begin{pmatrix}2\\\\3\\end{pmatrix}\\), el sector con mayor índice de riesgo es:',
+      texto: 'En tres sectores de una planta se evalúan dos tipos de riesgo: físico, químico. Los valores obtenidos se organizan en la matriz   \\(A=\\begin{pmatrix}3&2\\\\4&3\\\\2&1\\end{pmatrix}\\) y se establece un vector de ponderación según la importancia de cada riesgo \\(W=\\begin{pmatrix}2\\\\3\\end{pmatrix}\\), el sector con mayor índice de riesgo es:',
       correcta: 'sector2',
       opciones: [
         { valor: 'sector1', etiqueta: 'Sector 1, índice 12' },
@@ -263,7 +263,7 @@ const datos = {
         { valor: 'sector3', etiqueta: 'Sector 3, índice 7' },
         { valor: 'empate', etiqueta: 'Los tres sectores empatan' }
       ],
-      explicacion: 'El producto \\(AW\\) da \\(\\begin{pmatrix}12\\\\17\\\\7\\end{pmatrix}\\).'
+      explicacion: 'El producto \\(AW\\) da \\(\\begin{pmatrix}12\\\\17\\\\7\\end{pmatrix}\\). por lo tanto larespuesta es el sector 2.'
     },
     {
       id: 'a3',
