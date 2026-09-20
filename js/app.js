@@ -267,10 +267,17 @@ const datos = {
     },
     {
       id: 'a3',
-      texto: 'Con residuos \\(R=\\begin{pmatrix}120&60&30\\\\100&50&20\\end{pmatrix}\\) y costos \\(C=\\begin{pmatrix}300\\\\500\\\\100\\end{pmatrix}\\), el costo del sector 1 es:',
+      texto: 'Una planta industrial genera distintos tipos de residuos (orgánicos, químicos y reciclables) en dos sectores de trabajo. Las cantidadesLos costos de tratamiento por tonelada de cada tipo de residuo están dados por: (en toneladas) se representan mediante \\(R=\\begin{pmatrix}120&60&30\\\\100&50&20\\end{pmatrix}\\) y los costos de tratamiento por tonelada de cada tipo de residuo están dados por: \\(C=\\begin{pmatrix}300\\\\500\\\\100\\end{pmatrix}\\), el costo del sector 1 es:',
       correcta: '69000',
       opciones: ['57000', '69000', '126000', '36000'],
       explicacion: '\\(120(300)+60(500)+30(100)=69000\\).'
+    },
+    {
+      id: 'a4',
+      texto: 'Al corregir \\(V=\\begin{pmatrix}2&3\\\\4&1\\\\3&2\\end{pmatrix}\\) con \\(F=\\begin{pmatrix}0.9&0\\\\0&0.8\\end{pmatrix}\\), la entrada corregida de la fila 2, columna 1 es:',
+      correcta: '3.6',
+      opciones: ['4.0', '3.6', '0.8', '3.2'],
+      explicacion: 'La primera componente de cada fila se multiplica por 0,9: \\(4(0.9)=3.6\\).'
     }
   ]
 };
