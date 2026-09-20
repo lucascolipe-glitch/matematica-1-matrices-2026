@@ -285,9 +285,9 @@ const datos = {
 const aplicacionesCasos = [
   {
     titulo: 'Niveles de ruido por sector',
-    descripcion: 'Cada fila representa un sector y cada columna un turno. Calculamos el promedio por fila.',
-    matrices: [[[85,90,88],[80,87,85],[78,82,80]]],
-    operadores: [],
+    descripcion: 'En una planta industrial se realiza un monitoreo de los niveles de ruido (medidos en decibeles, dB) en tres sectores de trabajo (A, B y C), durante los tres turnos diarios (mañana, tarde y noche). Los datos relevados se organizan en la siguiente matriz, Cada fila representa un sector y cada columna un turno. Calculamos el promedio por fila.',
+    matrices: [[[85,90,88],[80,87,85],[78,82,80]],[[⅓],[⅓],[⅓]] ]
+    operadores: ['×'],
     resultado: [[87.67],[84],[80]],
     calculo: '\\(A: (85+90+88)/3\\approx87.67\\), \\(B:84\\), \\(C:80\\).',
     interpretacion: 'El sector A presenta la mayor exposición promedio.'
