@@ -294,16 +294,16 @@ const aplicacionesCasos = [
   },
   {
     titulo: 'Costo de EPP por mes',
-    descripcion: 'Las cantidades de cascos, guantes y gafas se multiplican por sus costos unitarios.',
+    descripcion: 'Una empresa registra la cantidad de elementos de protección personal (EPP) adquiridos durante dos meses. Los productos considerados son cascos, guantes y gafas de seguridad. La información se organiza en una matriz, y los costos unitarios (en pesos) están dados por otra matriz.',
     matrices: [[[50,100,80],[60,120,90]], [[200],[50],[150]]],
     operadores: ['×'],
     resultado: [[27000],[31500]],
     calculo: '\\(QP=\\begin{pmatrix}27000\\\\31500\\end{pmatrix}\\).',
-    interpretacion: 'El segundo mes implicó una inversión mayor.'
+    interpretacion: ' El segundo mes implicó una inversión mayor.'
   },
   {
     titulo: 'Índice de riesgo ponderado',
-    descripcion: 'Los riesgos físico y químico se ponderan con pesos 2 y 3.',
+    descripcion: 'Los riesgos físico y químico se ponderan con pesos 2 y 3. En tres sectores de una empresa se evalúan dos tipos de riesgos: físico y químico. Los valores obtenidos se organizan en una matriz y ara evaluar la peligrosidad total, se aplica un vector de ponderación.',
     matrices: [[[3,2],[4,3],[2,1]], [[2],[3]]],
     operadores: ['×'],
     resultado: [[12],[17],[7]],
@@ -312,7 +312,7 @@ const aplicacionesCasos = [
   },
   {
     titulo: 'Costo de tratamiento de residuos',
-    descripcion: 'Las toneladas de residuos orgánicos, químicos y reciclables se combinan con sus costos.',
+    descripcion: 'Las toneladas de residuos orgánicos, químicos y reciclables se combinan con sus costos. Una planta industrial genera distintos tipos de residuos (orgánicos, químicos y reciclables) en dos sectores de trabajo. Las cantidades (en toneladas) se en una matriz y los costos de tratamiento por tonelada de cada tipo de residuo están en otra matriz.',
     matrices: [[[120,60,30],[100,50,20]], [[300],[500],[100]]],
     operadores: ['×'],
     resultado: [[69000],[57000]],
@@ -321,7 +321,7 @@ const aplicacionesCasos = [
   },
   {
     titulo: 'Corrección de caudales',
-    descripcion: 'Una matriz diagonal aplica pérdidas diferentes a cada conducto.',
+    descripcion: 'Una matriz diagonal aplica pérdidas diferentes a cada conducto. En un sistema de flujo se registran los caudales en tres puntos y dos conductos en una matriz. Y se decide aplicar un factor de corrección debido a pérdidas en el sistema.',
     matrices: [[[2,3],[4,1],[3,2]], [[0.9,0],[0,0.8]]],
     operadores: ['×'],
     resultado: [[1.8,2.4],[3.6,0.8],[2.7,1.6]],
@@ -330,7 +330,7 @@ const aplicacionesCasos = [
   },
   {
     titulo: 'Transformación de datos ambientales',
-    descripcion: 'La matriz T combina la primera fila de M con el doble de la segunda y conserva la segunda fila.',
+    descripcion: 'La primera matriz combina la primera fila de M con el doble de la segunda y conserva la segunda fila. Esto se puede sintetizar en la siguiente multiplicación ',
     matrices: [[[1,2],[0,1]], [[5,3],[2,4]]],
     operadores: ['×'],
     resultado: [[9,11],[2,4]],
