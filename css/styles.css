@@ -321,3 +321,31 @@ footer p { margin: 4px; }
 @media (max-width: 900px) { .definicion-matriz, .laboratorio-ecuacion { grid-template-columns: 1fr; } .hero-grafico-matriz { grid-template-columns: auto auto auto auto auto; } .hero-grafico-matriz .simbolo-operacion:nth-of-type(4), .hero-grafico-matriz .mini-matriz--resultado { display: none; } }
 @media (max-width: 650px) { .marca-matriz svg { width: 47px; height: 47px; } .hero-grafico-matriz { grid-template-columns: 1fr; } .hero-grafico-matriz .simbolo-operacion { text-align: center; } .mini-matriz { justify-self: center; } .etiquetas-columnas { margin-left: 0; } .fila-contexto { grid-template-columns: 1fr; } .matrices-editables, .grilla-especiales { grid-template-columns: 1fr; } .producto-visual { justify-content: start; min-width: 0; } .gauss-layout { grid-template-columns: 1fr; } .matriz-aumentada .fila-aumentada { grid-template-columns: repeat(2,44px) 9px repeat(2,44px); } }
 @media print { .constructor-matriz, .calculadora-matrices, .visualizador-producto, .laboratorio-aplicaciones { break-inside: avoid; } }
+
+/* Recursos audiovisuales · YouTube en modo de privacidad mejorada */
+.videos-seccion {
+  margin: 22px 0 26px;
+  padding: clamp(16px, 2.4vw, 22px);
+  border: 1px solid #bfd1e2;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfdff, #f4f9fd);
+}
+.videos-seccion__encabezado { margin-bottom: 14px; }
+.videos-seccion__encabezado p { margin: 0; }
+.videos-seccion__encabezado p:last-child { margin-top: 4px; color: var(--texto-suave); }
+.videos-grid { display: grid; grid-template-columns: minmax(0, 760px); gap: 16px; }
+.videos-grid--multiple { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.video-tarjeta {
+  overflow: hidden;
+  border: 1px solid #cfdae5;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(31, 78, 140, .07);
+}
+.video-responsive { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #10243d; }
+.video-responsive iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-tarjeta__texto { padding: 14px 16px 16px; }
+.video-tarjeta__texto h3 { margin: 0 0 6px; color: var(--azul-oscuro); font-size: 1.05rem; }
+.video-tarjeta__texto p { margin: 0; color: var(--texto-suave); font-size: .91rem; line-height: 1.5; }
+@media (max-width: 760px) { .videos-grid--multiple { grid-template-columns: 1fr; } }
+@media print { .videos-seccion { display: none; } }
