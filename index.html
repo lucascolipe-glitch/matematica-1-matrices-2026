@@ -252,15 +252,7 @@
 
     <section id="ecuaciones" class="seccion observar" aria-hidden="true">
       <div class="titulo-seccion"><p class="numero">6</p><div><h2>Ecuaciones matriciales</h2><p>Dos matrices son iguales cuando tienen el mismo orden y sus entradas correspondientes son iguales.</p></div></div>
-      <div class="videos-seccion" aria-label="Video recomendado">
-        <div class="videos-seccion__encabezado"><p class="actividad__tipo">Video recomendado</p><p>Podés usar este recurso antes o después de la actividad interactiva para reforzar las ideas centrales.</p></div>
-        <div class="videos-grid ">
-        <article class="video-tarjeta">
-          <div class="video-responsive"><iframe src="https://www.youtube-nocookie.com/embed/T5SiAKnXPwA?rel=0" title="Ecuaciones matriciales: estrategia y ejemplos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-          <div class="video-tarjeta__texto"><h3>Ecuaciones matriciales: estrategia y ejemplos</h3><p>Muestra cómo traducir igualdades entre matrices en relaciones entre sus entradas y cómo organizar el despeje.</p></div>
-        </article>
-        </div>
-      </div>
+      
       <div class="definicion-matriz"><div><p class="actividad__tipo">Igualdad</p><p>Si \(A=(a_{ij})\) y \(B=(b_{ij})\) tienen el mismo orden:</p><div class="formula-grande">\[A=B\iff a_{ij}=b_{ij}\text{ para todo }i,j.\]</div></div><div><p>Esto transforma una ecuación matricial en un sistema de ecuaciones escalares, una por cada posición.</p></div></div>
       <div class="laboratorio laboratorio-ecuacion">
         <div class="laboratorio__texto"><p class="actividad__tipo">Ejemplo guiado</p><h3>Encontrá \(x\) e \(y\)</h3><p>Completá los valores que hacen verdadera la igualdad.</p><div class="formula-grande">\[\begin{pmatrix}2x+3y&5\\4x&y\end{pmatrix}+\begin{pmatrix}-7&2y\\3&6\end{pmatrix}=\begin{pmatrix}-5&1\\2&8\end{pmatrix}\]</div><div class="entradas-ecuacion"><label>\(x=\)<input id="ecuacion-x" type="number" step="any"></label><label>\(y=\)<input id="ecuacion-y" type="number" step="any"></label><button class="boton" id="comprobar-ecuacion-lab" type="button">Comprobar valores</button></div><div id="ecuacion-lab-feedback" class="resultado-lab"></div></div>
@@ -271,6 +263,15 @@
         <div id="quiz-ecuaciones" class="lista-preguntas"></div>
         <div class="acciones-actividad"><button class="boton" data-check="ecuaciones" type="button">Comprobar</button><button class="boton boton--fantasma" data-reset="ecuaciones" type="button">Borrar</button></div><div class="retroalimentacion" id="feedback-ecuaciones"></div>
       </article>
+      <div class="videos-seccion" aria-label="Video recomendado">
+        <div class="videos-seccion__encabezado"><p class="actividad__tipo">Video recomendado</p><p>Podés usar este recurso antes o después de la actividad interactiva para reforzar las ideas centrales.</p></div>
+        <div class="videos-grid ">
+        <article class="video-tarjeta">
+          <div class="video-responsive"><iframe src="https://www.youtube-nocookie.com/embed/T5SiAKnXPwA?rel=0" title="Ecuaciones matriciales: estrategia y ejemplos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div class="video-tarjeta__texto"><h3>Ecuaciones matriciales: estrategia y ejemplos</h3><p>Muestra cómo traducir igualdades entre matrices en relaciones entre sus entradas y cómo organizar el despeje.</p></div>
+        </article>
+        </div>
+      </div>
     </section>
 
     <section id="inversas" class="seccion observar" aria-hidden="true">
