@@ -271,13 +271,6 @@ const datos = {
       correcta: '69000',
       opciones: ['57000', '69000', '126000', '36000'],
       explicacion: '\\(120(300)+60(500)+30(100)=69000\\).'
-    },
-    {
-      id: 'a4',
-      texto: 'Al corregir \\(V=\\begin{pmatrix}2&3\\\\4&1\\\\3&2\\end{pmatrix}\\) con \\(F=\\begin{pmatrix}0.9&0\\\\0&0.8\\end{pmatrix}\\), la entrada corregida de la fila 2, columna 1 es:',
-      correcta: '3.6',
-      opciones: ['4.0', '3.6', '0.8', '3.2'],
-      explicacion: 'La primera componente de cada fila se multiplica por 0,9: \\(4(0.9)=3.6\\).'
     }
   ]
 };
