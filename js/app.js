@@ -274,7 +274,7 @@ const datos = {
     },
     {
       id: 'a4',
-      texto: 'Al corregir \\(V=\\begin{pmatrix}2&3\\\\4&1\\\\3&2\\end{pmatrix}\\) con \\(F=\\begin{pmatrix}0.9&0\\\\0&0.8\\end{pmatrix}\\), la entrada corregida de la fila 2, columna 1 es:',
+      texto: 'En un sistema de ventilación se registran los caudales (m³/s) en tres puntos y dos conductos: \\(V=\\begin{pmatrix}2&3\\\\4&1\\\\3&2\\end{pmatrix}\\), como hay perdida en los conductos se decide aplicar un factor de corrección\\(F=\\begin{pmatrix}0.9&0\\\\0&0.8\\end{pmatrix}\\), la entrada corregida de la fila 2, columna 1 es:',
       correcta: '3.6',
       opciones: ['4.0', '3.6', '0.8', '3.2'],
       explicacion: 'La primera componente de cada fila se multiplica por 0,9: \\(4(0.9)=3.6\\).'
